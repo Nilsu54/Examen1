@@ -27,7 +27,7 @@
             <a class="nav-link active" aria-current="page" href="#">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Canciones</a>
+            <a class="nav-link" href="index.php?r=addsong">Añadir Canciones</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Login</a>

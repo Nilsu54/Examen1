@@ -7,7 +7,7 @@
  include "../src/config.php";
  include "../src/controllers/ctrlIndex.php";
  include "../src/controllers/ctrlJson.php";
-
+include "../src/models/songs.php";
 /**
   * Carreguem les classes del Framework Emeset
 */
@@ -15,6 +15,9 @@
  include "../src/Emeset/Container.php";
  include "../src/Emeset/Request.php";
  include "../src/Emeset/Response.php";
+ include "../src/models/db.php";
+ include "../src/models/songs.php";
+ 
 
  $request = new \Emeset\Request();
  $response = new \Emeset\Response();
@@ -36,6 +39,9 @@
      $response = ctrlIndex($request, $response, $container);
  } elseif($r == "json") {
   $response = ctrlJson($request, $response, $container);
+} elseif($r == "addsong") {
+  include "../src/controllers/addsongController.php";
+    $response = addSongController($request, $response, $container); 
 } else {
      echo "No existeix la ruta";
  }
