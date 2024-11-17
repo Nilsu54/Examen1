@@ -1,38 +1,28 @@
 <?php
 
-class Songs 
+class Songs
 {
-
     private PDO $sql;
 
-    /**
-     *
-     * @param PDO $sql Database connection object (PDO)
-     */
     public function __construct(PDO $sql)
     {
         $this->sql = $sql;
     }
 
-    public function addSong($name, $artist, $file)
-    {
-        $query = "insert into songs (name, artist, file) 
-        values ('{$name}', '{$artist}', '{$file}')";
+    //  id_song | song_name | artist   | duration | song_path
+    public function addSong($song_name, $artist, $song_path){
+        $query = "INSERT INTO songs (song_name, artist, song_path) VALUES (:song_name, :artist, :song_path)";
+        $stm = $this->sql->prepare($query);
+        $stm->execute([":song_name" => $song_name, ":artist" => $artist, ":song_path" => $song_path]);
+    }
 
-            // Prepare and execute the query.
+    public function getAllSongs() {
+        $query = "SELECT song_name, artist, duration, song_path FROM songs";
         $stm = $this->sql->prepare($query);
         $stm->execute();
-       
+        
+        // Recupera todas las canciones como un arreglo asociativo
+        return $stm->fetchAll(PDO::FETCH_ASSOC);
     }
-
-    public function getAllSongs($song_id)
-    {
-        $query = "SELECT song_id, song_name, artist, song_path, duration FROM songs where song_id = :song_id;";
-        $stm = $this->sql->prepare($query);
-        $stm->execute([":song_id" => $song_id]);
-        $result = $stm->fetch(PDO::FETCH_ASSOC);
-
-        return $result;
-    }
-
+    
 }

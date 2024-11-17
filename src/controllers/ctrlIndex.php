@@ -6,6 +6,9 @@ function ctrlIndex($request, $response, $container){
 
     $response->set("name", $name);
 
+    $songs = $container->Songs()->getAllSongs();
+    $response->set("songs", $songs);
+
     $response->setTemplate("index.php");
 
     return $response;
