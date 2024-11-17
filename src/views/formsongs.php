@@ -28,9 +28,9 @@
                         <li class="nav-item">
                             <a class="nav-link active" href="/index.php?r=formsongs">Add Songs</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/index.php?r=songs">Songs</a>
-                        </li>
+                          <!--  <li class="nav-item">
+              <a class="nav-link" href="/index.php?r=songs">Songs</a>
+            </li> -->
                     </ul>
                 </div>
             </div>

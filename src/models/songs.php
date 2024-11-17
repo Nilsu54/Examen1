@@ -25,4 +25,20 @@ class Songs
         return $stm->fetchAll(PDO::FETCH_ASSOC);
     }
     
+    public function getSongById($id) {
+        $query = "SELECT * FROM songs WHERE id_song = :id";
+        $stm = $this->sql->prepare($query);
+        $stm->execute([":id" => $id]);
+        return $stm->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function updateSong($id, $songName, $artist) {
+        $query = "UPDATE songs SET song_name = :song_name, artist = :artist WHERE id_song = :id";
+        $stm = $this->sql->prepare($query);
+        return $stm->execute([
+            ":id" => $id,
+            ":song_name" => $songName,
+            ":artist" => $artist
+        ]);
+    }
 }

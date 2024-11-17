@@ -48,7 +48,8 @@ if ($r == "") {
   $response = ctrlformsong($request, $response, $container);
 } elseif ($r == "json") {
   $response = ctrlJson($request, $response, $container);
-} else {
+} 
+  else {
   echo "No existeix la ruta";
 }
 
