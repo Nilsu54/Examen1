@@ -1,5 +1,6 @@
 services:
   php-apache:
+    container_name: examen1_php
     #Mapeig de ports
     ports:
       - "8000:80"
@@ -7,9 +8,11 @@ services:
     build: 
       context: .
       dockerfile: Build/server/Dockerfile
+    image: examen1_php
+    restart: always
     #Mapeja la carpeta del projecte a la carpeta /var/www/html
-    volumes:
-      - .:/var/www/html
+    networks:
+      - network_docker
   mysql:
     #Mapeig de ports
     ports:
@@ -18,11 +21,18 @@ services:
     build:
       context: .
       dockerfile: Build/mysql/Dockerfile
+    image: examen1_mysql
+    restart: always
     #Variables d'entorn per la bdd.
     environment:
       MYSQL_ROOT_PASSWORD: "12345"
-      MYSQL_DATABASE: "dbweb"
+      MYSQL_DATABASE: "examen1"
     volumes:
       - dbData:/var/lib/mysql
+    networks:
+      - network_docker
 volumes:
   dbData:
+networks:
+  network_docker:
+    driver: bridge

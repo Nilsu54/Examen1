@@ -1,16 +1,17 @@
 <?php
 
 function ctrlIndex($request, $response, $container){
-
-    $name = $request->get(INPUT_GET, "name");
-
-    $response->set("name", $name);
-
-    $songs = $container->Songs()->getAllSongs();
-    $response->set("songs", $songs);
-
-    $response->setTemplate("index.php");
-
-    return $response;
+    // Obtener el modelo de canciones   
+    $songModel = $container->Songs();
     
+    // Obtener todas las canciones
+    $songs = $songModel->getAllSongs();
+    
+    // Pasar las canciones a la vista
+    $response->set('songs', $songs);
+    
+    // Establecer la plantilla
+    $response->setTemplate("index.php");
+    
+    return $response;
 }

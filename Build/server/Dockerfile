@@ -9,5 +9,7 @@ RUN sed -i "s|/var/www/html|/var/www/html/public|g" /etc/apache2/sites-available
 # Habilita l'ús de fitxers .htaccess a la carpeta /var/www/html
 #RUN sed -i "s|</VirtualHost>|\t<Directory /var/www/html>\n\t    Options Indexes FollowSymLinks\n\t    AllowOverride All\n\t    Require all granted\n</Directory>\n </VirtualHost>|g" /etc/apache2/sites-available/000-default.conf
 # Instal·la les extensions necessaries per connectar-se amb una bdd mysql
+COPY . /var/www/html
+
 RUN apt-get update && \
     docker-php-ext-install mysqli pdo pdo_mysql

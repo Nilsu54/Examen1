@@ -17,7 +17,7 @@ function ctrladdsong($request, $response, $container){
 
         $songModal->addSong($song_name, $artist, $dir_file);
 
-        $response->redirect("Location: index.php");
+        $response->redirect("Location: index.php?r=songs");
     }
     return $response;
 }
