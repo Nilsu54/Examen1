@@ -23,14 +23,21 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav me-auto mb-2 mb-md-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+              <a class="nav-link active" aria-current="page" href="index.php">
+                <i class="bi bi-house-door"></i> Home
+              </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/index.php?r=formsongs">Add Songs</a>
+              <a class="nav-link" href="/index.php?r=formsongs">
+                <i class="bi bi-plus-circle"></i> Add Songs
+              </a>
             </li>
-
+            <li class="nav-item">
+              <a class="nav-link" href="/index.php?r=songs">
+                <i class="bi bi-music-note-list"></i> Songs
+              </a>
+            </li>
           </ul>
-        
         </div>
       </div>
     </nav>
@@ -66,7 +73,7 @@
                                     <div class="d-flex align-items-center justify-content-start gap-2 p-2 w-100">
                                         <!-- Contenedor del reproductor de audio -->
                                         <div class="audio-player bg-white rounded-3 shadow-sm p-2 flex-grow-1">
-                                            <audio id="myAudio" controls class="w-100">
+                                            <audio id="myAudio" controls class="w-100 d-none">
                                                 <source src="<?= htmlspecialchars($song['song_path']) ?>" type="audio/mpeg">
                                                 Tu navegador no soporta el elemento de audio.
                                             </audio>
@@ -74,11 +81,16 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <!-- Botón para abrir el modal de edición -->
-                                    <button class="btn btn-warning m-1" data-bs-toggle="modal" data-bs-target="#editSongModal-<?= $song['id_song'] ?>">
-                                        Editar
-                                    </button>
-                                  
+                                    <div class="btn-group" role="group" aria-label="Controles de canción">
+                                        <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editSongModal-<?= $song['id_song'] ?>">
+                                            <i class="bi bi-pencil"></i> Editar
+                                        </button>
+                                        <button class="btn btn-danger btn-sm">
+                                            <a class="text-white text-decoration-none" href="index.php?r=deletesong&id=<?= $song['id_song'] ?>">
+                                                <i class="bi bi-trash"></i> Eliminar
+                                            </a>
+                                        </button>
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>

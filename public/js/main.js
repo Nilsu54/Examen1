@@ -15,6 +15,53 @@ document.addEventListener("DOMContentLoaded", () => {
         durationElement.textContent = formattedDuration; // Actualizar con la duración formateada
       }
     });
+
+    // Crear controles personalizados para cada audio
+    const container = audioElement.closest('.audio-player');
+    const controls = document.createElement('div');
+    controls.className = 'custom-controls d-flex align-items-center gap-2 mt-2';
+    controls.innerHTML = `
+        <button class="btn btn-sm btn-primary play-btn">
+            <i class="bi bi-play-fill"></i>
+        </button>
+        <button class="btn btn-sm btn-secondary pause-btn">
+            <i class="bi bi-pause-fill"></i>
+        </button>
+        <button class="btn btn-sm btn-info mute-btn">
+            <i class="bi bi-volume-up-fill"></i>
+        </button>
+        <div class="progress flex-grow-1" style="height: 8px;">
+            <div class="progress-bar" role="progressbar" style="width: 0%"></div>
+        </div>
+    `;
+
+    container.appendChild(controls);
+
+    // Agregar eventos a los botones
+    const playBtn = controls.querySelector('.play-btn');
+    const pauseBtn = controls.querySelector('.pause-btn');
+    const muteBtn = controls.querySelector('.mute-btn');
+    const progressBar = controls.querySelector('.progress-bar');
+
+    playBtn.addEventListener('click', () => {
+        audioElement.play();
+    });
+
+    pauseBtn.addEventListener('click', () => {
+        audioElement.pause();
+    });
+
+    muteBtn.addEventListener('click', () => {
+        audioElement.muted = !audioElement.muted;
+        muteBtn.querySelector('i').className = audioElement.muted ? 
+            'bi bi-volume-mute-fill' : 'bi bi-volume-up-fill';
+    });
+
+    // Actualizar barra de progreso
+    audioElement.addEventListener('timeupdate', () => {
+        const progress = (audioElement.currentTime / audioElement.duration) * 100;
+        progressBar.style.width = `${progress}%`;
+    });
   });
 });
 
