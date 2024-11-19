@@ -32,11 +32,11 @@
                 <i class="bi bi-plus-circle"></i> Add Songs
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/index.php?r=songs">
+            <!--  <li class="nav-item">
+             <a class="nav-link" href="/index.php?r=songs">
                 <i class="bi bi-music-note-list"></i> Songs
               </a>
-            </li>
+            </li> -->
           </ul>
         </div>
       </div>
@@ -85,11 +85,7 @@
                                         <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editSongModal-<?= $song['id_song'] ?>">
                                             <i class="bi bi-pencil"></i> Editar
                                         </button>
-                                        <button class="btn btn-danger btn-sm">
-                                            <a class="text-white text-decoration-none" href="index.php?r=deletesong&id=<?= $song['id_song'] ?>">
-                                                <i class="bi bi-trash"></i> Eliminar
-                                            </a>
-                                        </button>
+                                       
                                     </div>
                                 </td>
                             </tr>
