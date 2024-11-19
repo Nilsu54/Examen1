@@ -4,10 +4,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bootstrap demo</title>
+  <title>ExamenNil</title>
   <link href="/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
   <link href="/css/datatables.css" rel="stylesheet" crossorigin="anonymous">
-  <link href="/css/bootstrap-icons.css" rel="stylesheet">
+    <link href="/css/bootstrap-icons.css" rel="stylesheet">
 </head>
 
 <body>
@@ -73,7 +73,7 @@
                                     <div class="d-flex align-items-center justify-content-start gap-2 p-2 w-100">
                                         <!-- Contenedor del reproductor de audio -->
                                         <div class="audio-player bg-white rounded-3 shadow-sm p-2 flex-grow-1">
-                                            <audio id="myAudio" controls class="w-100 d-none">
+                                            <audio  id="myAudio" controls class="w-100 d-none">
                                                 <source src="<?= htmlspecialchars($song['song_path']) ?>" type="audio/mpeg">
                                                 Tu navegador no soporta el elemento de audio.
                                             </audio>

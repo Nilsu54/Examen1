@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Songs</title>
+    <title>ExamenNil</title>
     <link href="/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
     <link href="/css/datatables.css" rel="stylesheet" crossorigin="anonymous">
     <link href="/css/bootstrap-icons.css" rel="stylesheet">
