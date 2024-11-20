@@ -34,7 +34,12 @@ class Songs
         $stm->execute([":id_song" => $id_song]);
         return $stm->fetch(PDO::FETCH_ASSOC);
     }
-
+    public function deleteSong($id_song)
+    {
+        $query = "DELETE FROM songs WHERE id_song = :id_song";
+        $stm = $this->sql->prepare($query);
+        return $stm->execute([":id_song" => $id_song]);
+    }
     //  id_song | song_name | artist   | duration | song_path
     public function updateSong($id_song, $song_name, $artist, $song_path)
     {

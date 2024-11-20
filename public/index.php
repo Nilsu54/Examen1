@@ -12,7 +12,7 @@ include "../src/controllers/ctrladdsong.php";
 include "../src/controllers/ctrlsongslist.php";
 include "../src/controllers/ctrleditformsong.php";
 include "../src/controllers/ctrlupdatesong.php";
-
+include "../src/controllers/ctrldeletesong.php";
 /**
  * Carreguem les classes del Framework Emeset
  */
@@ -54,8 +54,9 @@ if ($r == "") {
   $response = ctrlformsong($request, $response, $container);
 } elseif ($r == "json") {
   $response = ctrlJson($request, $response, $container);
-} 
-else {
+} elseif ($r == "deletesong") {
+  $response = ctrldeletesong($request, $response, $container);
+} else {
   echo "No existeix la ruta";
 }
 

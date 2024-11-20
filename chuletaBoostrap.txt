@@ -1,0 +1,144 @@
+BOOTSTRAP CHEATSHEET
+==================
+
+1. NAVEGACIÓN
+-------------
+<!-- Navbar básico -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Logo</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Home</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+2. TABLAS
+----------
+<table class="table table-striped table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Ejemplo</td>
+    </tr>
+  </tbody>
+</table>
+
+3. FORMULARIOS
+--------------
+<!-- Formulario flotante -->
+<div class="form-floating mb-3">
+  <input type="text" class="form-control" id="floatingInput" placeholder="Nombre">
+  <label for="floatingInput">Nombre</label>
+</div>
+
+<!-- Input group -->
+<div class="input-group mb-3">
+  <span class="input-group-text">@</span>
+  <input type="text" class="form-control" placeholder="Username">
+</div>
+
+4. MODALES
+----------
+<!-- Botón trigger -->
+<button data-bs-toggle="modal" data-bs-target="#miModal">Abrir Modal</button>
+
+<!-- Modal -->
+<div class="modal fade" id="miModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Título</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        Contenido
+      </div>
+    </div>
+  </div>
+</div>
+
+5. PAGINACIÓN
+-------------
+<nav aria-label="Page navigation">
+  <ul class="pagination">
+    <li class="page-item"><a class="page-link" href="#">Anterior</a></li>
+    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">Siguiente</a></li>
+  </ul>
+</nav>
+
+6. CARDS
+--------
+<div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Título</h5>
+    <p class="card-text">Contenido</p>
+    <a href="#" class="btn btn-primary">Botón</a>
+  </div>
+</div>
+
+7. ACORDEÓN
+-----------
+<div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+        Elemento #1
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        Contenido
+      </div>
+    </div>
+  </div>
+</div>
+
+8. ALERTAS
+----------
+<div class="alert alert-primary alert-dismissible fade show" role="alert">
+  Mensaje de alerta
+  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+</div>
+
+
+<!-- Cambiar colores de fondo -->
+<div class="bg-primary text-white">Fondo azul con texto blanco</div>
+<div class="bg-secondary text-white">Fondo gris con texto blanco</div>
+<div class="bg-success text-white">Fondo verde con texto blanco</div>
+<div class="bg-danger text-white">Fondo rojo con texto blanco</div>
+<div class="bg-warning text-dark">Fondo amarillo con texto oscuro</div>
+<div class="bg-info text-white">Fondo azul claro con texto blanco</div>
+<div class="bg-light text-dark">Fondo claro con texto oscuro</div>
+<div class="bg-dark text-white">Fondo negro con texto blanco</div>
+
+<!-- Cambiar colores de texto -->
+<p class="text-primary">Texto azul</p>
+<p class="text-secondary">Texto gris</p>
+<p class="text-success">Texto verde</p>
+<p class="text-danger">Texto rojo</p>
+<p class="text-warning">Texto amarillo</p>
+<p class="text-info">Texto azul claro</p>
+<p class="text-light bg-dark">Texto claro sobre fondo oscuro</p>
+<p class="text-dark">Texto oscuro</p>
+<p class="text-white bg-dark">Texto blanco sobre fondo oscuro</p>
+
+<!-- Cambiar el peso de la fuente -->
+<p class="font-weight-bold">Texto en negrita</p>
+<p class="font-italic">Texto en cursiva</p>

@@ -13,35 +13,39 @@
 <body>
 
   <!-- Navbar -->
+
   <div>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-md navbar-dark bg-warning ">
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.php">I <i class="bi bi-heart-fill text-danger"></i> Profes</a>
+        <a class="text-dark navbar-brand" href="index.php">I <i class="bi bi-heart-fill text-danger"></i> Profes</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav me-auto mb-2 mb-md-0">
             <li class="nav-item">
-              <a class="nav-link " aria-current="page" href="index.php">
+              <a class="nav-link active text-dark" aria-current="page" href="index.php">
                 <i class="bi bi-house-door"></i> Home
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="/index.php?r=formsongs">
+              <a class=" nav-link text-dark" href="/index.php?r=formsongs">
                 <i class="bi bi-plus-circle"></i> Add Songs
               </a>
             </li>
-            <!--  <li class="nav-item">
-             <a class="nav-link" href="/index.php?r=songs">
-                <i class="bi bi-music-note-list"></i> Songs
+              <li class="nav-item">
+             <a class="text-dark nav-link" href="/index.php?r=songs">
+                <i class="bi bi-music-note-list"></i> Credits
               </a>
-            </li> -->
+            </li> 
           </ul>
         </div>
       </div>
     </nav>
   </div>
+
+
+  
   <script src="/js/bootstrap.bundle.min.js"></script>
   <script src="/js/jquery-3.7.1.min.js"></script>
   <script src="/js/datatables.js"></script>
@@ -67,7 +71,7 @@
                 <input type="file" name="song" accept="audio/*" class="form-control" id="song">
                 <label>Canción</label>
             </div>
-            <button class="btn btn-primary mt-3" type="submit">Añadir Cancion</button>
+            <button class="bg-warning text-dark btn btn-primary mt-3" type="submit">Añadir Cancion</button>
         </form>
     </div>
 

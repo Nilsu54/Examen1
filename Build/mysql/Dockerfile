@@ -1,2 +1,3 @@
 FROM mysql:latest
-COPY Build/bbdd/init.sql /docker-entrypoint-initdb.d
+USER root
+RUN chmod 755 /var/lib/mysql

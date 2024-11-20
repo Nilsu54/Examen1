@@ -1,3 +1,85 @@
+:root {
+    --custom-red: #dc3545;
+    --custom-red-dark: #b02a37;
+    --custom-red-light: #ff4d5e;
+    --custom-red-hover: #bb2d3b;
+    --custom-white: #ffffff;
+    --custom-gray-light: #f8f9fa;
+}
+
+/* Botones */
+.btn-custom-red {
+    background-color: var(--custom-red);
+    color: var(--custom-white);
+    border-color: var(--custom-red);
+    transition: all 0.3s ease;
+}
+
+.btn-custom-red:hover {
+    background-color: var(--custom-red-hover);
+    border-color: var(--custom-red-hover);
+    color: var(--custom-white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(220, 53, 69, 0.3);
+}
+
+/* Enlaces */
+.link-custom-red {
+    color: var(--custom-red);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.link-custom-red:hover {
+    color: var(--custom-red-dark);
+    text-decoration: underline;
+}
+
+/* Backgrounds */
+.bg-custom-red {
+    background-color: var(--custom-red);
+    color: var(--custom-white);
+}
+
+.bg-custom-red-light {
+    background-color: var(--custom-red-light);
+    color: var(--custom-white);
+}
+
+/* Bordes */
+.border-custom-red {
+    border-color: var(--custom-red) !important;
+}
+
+/* Texto */
+.text-custom-red {
+    color: var(--custom-red);
+}
+
+/* Hover effects */
+.hover-custom-red:hover {
+    background-color: var(--custom-red-hover);
+    color: var(--custom-white);
+    transition: all 0.3s ease;
+}
+
+/* Cards con tema rojo */
+.card-custom-red {
+    border-color: var(--custom-red);
+}
+
+.card-custom-red .card-header {
+    background-color: var(--custom-red);
+    color: var(--custom-white);
+}
+
+/* Alerts personalizados */
+.alert-custom-red {
+    background-color: rgba(220, 53, 69, 0.1);
+    border-color: var(--custom-red);
+    color: var(--custom-red-dark);
+}
+
 .audio-player {
   transition: transform 0.2s ease;
   min-width: 200px;
@@ -38,4 +120,24 @@ audio::-webkit-media-controls-current-time-display,
 audio::-webkit-media-controls-time-remaining-display {
   color: var(--bs-gray-700);
   font-family: var(--bs-font-sans-serif);
+}
+
+.titol{
+  background-color: darkgoldenrod;
+}
+.header {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.titulo-header {
+  margin-top: -40px;
+  margin: 0;
+  font-size: 40px;
+}
+
+h1 {  
+  padding: 5px 10px;
+  font-size: 50px;
+  background-color: darkgoldenrod;
 }

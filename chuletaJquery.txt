@@ -1,0 +1,154 @@
+JQUERY CHEATSHEET
+================
+
+1. SELECTORES BÁSICOS
+---------------------
+// Selector por ID
+$("#miElemento")
+
+// Selector por clase
+$(".miClase")
+
+// Selector por etiqueta
+$("p")
+
+// Selector múltiple
+$("p, div, .miClase")
+
+// Selector de hijo directo
+$("#padre > .hijo")
+
+2. EVENTOS
+----------
+// Click
+$("#miBoton").click(function() {
+    // código
+});
+
+// Hover
+$("#elemento").hover(
+    function() { // Mouse enter
+        $(this).css("background", "red");
+    },
+    function() { // Mouse leave
+        $(this).css("background", "");
+    }
+);
+
+// Submit de formulario
+$("#miFormulario").submit(function(e) {
+    e.preventDefault();
+    // código
+});
+
+3. MANIPULACIÓN DOM
+------------------
+// Añadir clase
+$("#elemento").addClass("nuevaClase");
+
+// Quitar clase
+$("#elemento").removeClass("clase");
+
+// Toggle clase
+$("#elemento").toggleClass("clase");
+
+// Cambiar contenido
+$("#elemento").html("<p>Nuevo contenido</p>");
+$("#elemento").text("Nuevo texto");
+
+// Cambiar valor de input
+$("#miInput").val("nuevo valor");
+
+4. EFECTOS
+----------
+// Mostrar/Ocultar
+$("#elemento").hide();
+$("#elemento").show();
+$("#elemento").toggle();
+
+// Fade
+$("#elemento").fadeIn();
+$("#elemento").fadeOut();
+$("#elemento").fadeToggle();
+
+// Slide
+$("#elemento").slideDown();
+$("#elemento").slideUp();
+$("#elemento").slideToggle();
+
+5. AJAX
+-------
+// GET request
+$.get("url", function(data) {
+    console.log(data);
+});
+
+// POST request
+$.post("url", {
+    nombre: "valor",
+    edad: 25
+}, function(response) {
+    console.log(response);
+});
+
+// Ajax completo
+$.ajax({
+    url: "api/endpoint",
+    method: "POST",
+    data: {
+        id: 1,
+        nombre: "Test"
+    },
+    success: function(response) {
+        console.log(response);
+    },
+    error: function(xhr, status, error) {
+        console.error(error);
+    }
+});
+
+6. TRAVERSING
+------------
+// Encontrar elementos hijos
+$("#padre").children();
+$("#padre").find(".hijo");
+
+// Elementos padres
+$("#elemento").parent();
+$("#elemento").parents();
+$("#elemento").closest(".contenedor");
+
+// Hermanos
+$("#elemento").siblings();
+$("#elemento").next();
+$("#elemento").prev();
+
+7. UTILIDADES
+------------
+// Each (iteración)
+$(".elementos").each(function(index) {
+    console.log(index + ": " + $(this).text());
+});
+
+// Filter
+$("p").filter(".especial");
+
+// Map
+$("input").map(function() {
+    return $(this).val();
+}).get();
+
+8. ATRIBUTOS
+-----------
+// Obtener atributo
+$("#imagen").attr("src");
+
+// Establecer atributo
+$("#imagen").attr("src", "nueva-imagen.jpg");
+
+// Data attributes
+$("#elemento").data("id");
+$("#elemento").data("id", "nuevo-valor");
+
+NOTA: No olvides incluir jQuery antes de usar cualquier código:
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>

@@ -34,9 +34,9 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="progress-bar" role="progressbar" style="width: 0%"></div>
         </div>
     `;
-
+  
     container.appendChild(controls);
-
+  
     // Agregar eventos a los botones
     const playBtn = controls.querySelector('.play-btn');
     const pauseBtn = controls.querySelector('.pause-btn');
